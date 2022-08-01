@@ -47,6 +47,7 @@ func (s *Server) setupMiddleware() {
 	s.echo.Use(middleware.Gzip())
 	s.echo.Use(middleware.Recover())
 	s.echo.Use(middleware.CORS())
+	s.echo.Use(middleware.JWTWithConfig(middleware.DefaultJWTConfig))
 
 	s.echo.Use(middleware.StaticWithConfig(middleware.StaticConfig{
 		Root:  "/frontend/dist",

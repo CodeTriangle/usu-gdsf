@@ -18,6 +18,6 @@ func createUser(c echo.Context) error {
 func init() {
 	log.Info("Running user init")
 
-	registerRoute(route{method: http.MethodGet, path: "/user", handler: user})
-	registerRoute(route{method: http.MethodPost, path: "/user", handler: createUser})
+	registerRoute(route{method: http.MethodGet, path: "/login", handler: user})
+	registerRoute(route{method: http.MethodPost, path: "/register", handler: createUser})
 }
